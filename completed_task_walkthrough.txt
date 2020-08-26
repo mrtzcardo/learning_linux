@@ -1,0 +1,41 @@
+$example_local.json https://support.oneskyapp.com/hc/en-us/article_attachments/202761627/example_1.json
+	# downloads example_1.json
+	# renames example_1.json to example_local.json
+
+$FILENAME_ENV=example_local.json
+    # creates variable
+	
+$echo $FILENAME_ENV
+	# displays: 	example_local.json
+
+$cat $FILENAME_ENV
+	# displays: 	{
+    			"fruit": "Apple",
+    			"size": "Large",
+    			"color": "Red"
+					}
+
+$nano $FILENAME_ENV
+	# displays: 	{
+    			"fruit": "Apple",
+    			"size": "Large",
+    			"color": "Red",
+			    "taste": "Sweet"    <--- added this line in nano
+					}
+
+    ^O              # overwrite FILENAME_ENV
+    <enter key>     # saves file name (unchanged)
+    ^X              # exits nano
+    
+$mkdir ~/pythonpractice
+
+$touch ~/pytonpractice/key_value_flip.py
+
+$vi ~/pythonpractice/key_value_flip.py
+	# see key_value_flip.py in github 
+
+$python3 ~/pythonpractice/key_value_flip.py -i $FILENAME_EVN
+	# displays: 
+		original json file: {'fruit': 'Apple', 'size': 'Large', 'color': 'Red', 'taste': 'sweet'}
+		new json file: {'Apple': 'fruit', 'Large': 'size', 'Red': 'color', 'sweet': 'taste'}
+		done		
